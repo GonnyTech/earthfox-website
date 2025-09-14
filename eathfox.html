@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthfox - Il Sito Web Completo</title>
+    <!-- Caricamento di Tailwind CSS per uno stile rapido e responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            color: #3C3C3B;
+            transition: background-color 0.5s ease;
+        }
+        .hero-section, .story-section {
+            background-color: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+        .btn-download {
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: linear-gradient(90deg, #38a169 0%, #34d399 100%);
+        }
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(52, 211, 153, 0.4);
+        }
+        .feature-card {
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .icon {
+            color: #34d399;
+        }
+        .active-link {
+            border-bottom: 2px solid #34d399;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+    <!-- Navigazione -->
+    <header class="w-full bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-4 flex justify-center space-x-8">
+            <a href="#home" class="nav-link text-gray-700 font-medium hover:text-green-500 transition-colors duration-200 active-link">Home</a>
+            <a href="#story" class="nav-link text-gray-700 font-medium hover:text-green-500 transition-colors duration-200">La Storia</a>
+        </nav>
+    </header>
+
+    <!-- Contenitore Principale delle Pagine -->
+    <main class="flex-grow container mx-auto p-4 md:p-8 space-y-12">
+
+        <!-- Home Page -->
+        <section id="home" class="page">
+            <div class="hero-section text-center p-8 md:p-16 mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+                    Earthfox: Naviga in Armonia con il Pianeta
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Earthfox è il browser che unisce prestazioni elevate e un impegno per la sostenibilità. Naviga velocemente, proteggi la tua privacy e supporta progetti ambientali con ogni clic.
+                </p>
+                <!-- Sostituisci l'URL qui sotto con il link effettivo al tuo file di download. -->
+                <a href="https://example.com/download/earthfox-latest.zip" id="download-button" class="btn-download inline-block px-10 py-4 text-white font-bold rounded-full text-lg shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-green-300">
+                    Scarica Earthfox
+                </a>
+                <p class="text-sm text-gray-500 mt-4">Disponibile solo per Windows</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Carta 1: Sostenibilità -->
+                <div class="feature-card p-6 text-center">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="icon w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Impatto Sostenibile</h3>
+                    <p class="text-gray-600">
+                        Sosteniamo l'ambiente con ogni download e offriamo funzionalità che riducono il tuo impatto digitale.
+                    </p>
+                </div>
+
+                <!-- Carta 2: Privacy -->
+                <div class="feature-card p-6 text-center">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="icon w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm0-10V8a2 2 0 012-2h4a2 2 0 012 2v2"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Privacy e Sicurezza</h3>
+                    <p class="text-gray-600">
+                        Earthfox è costruito per proteggere i tuoi dati, bloccando tracker e garantendo la tua anonimità online.
+                    </p>
+                </div>
+
+                <!-- Carta 3: Controllo -->
+                <div class="feature-card p-6 text-center">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="icon w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Un Browser Fatto per Te</h3>
+                    <p class="text-gray-600">
+                        Personalizza la tua esperienza di navigazione con estensioni e impostazioni che si adattano al tuo stile.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sezione della Storia -->
+        <section id="story" class="page hidden">
+            <div class="story-section text-center p-8 md:p-16">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-8">
+                    La Storia di Earthfox
+                </h2>
+                <p class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
+                    L'idea di Earthfox è nata dalla semplice domanda: cosa succederebbe se ogni nostra ricerca online potesse avere un impatto positivo sul pianeta?
+                </p>
+                <p class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
+                    Mentre i browser tradizionali sono orientati al profitto e alla raccolta di dati, noi abbiamo immaginato un'alternativa. Volevamo un browser che unisse le migliori prestazioni e la massima privacy, senza compromettere i nostri valori. Così abbiamo iniziato a lavorare su un fork open-source di Firefox, una base solida e affidabile.
+                </p>
+                <p class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
+                    Abbiamo rimosso la telemetria, potenziato le impostazioni sulla privacy e, soprattutto, abbiamo integrato Ecosia come motore di ricerca predefinito. Con ogni ricerca effettuata su Earthfox, tu contribuisci a piantare un albero. È un piccolo gesto che, moltiplicato per milioni di utenti, crea un'onda di cambiamento positivo.
+                </p>
+                <p class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
+                    Earthfox è più di un browser: è un movimento. È la dimostrazione che la tecnologia può essere usata per fare del bene, proteggendo non solo i nostri dati, ma anche il nostro mondo.
+                </p>
+                
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Sezione del Footer -->
+    <footer class="w-full text-center text-gray-500 text-sm py-8">
+        &copy; 2024 Il tuo Progetto Earthfox. Tutti i diritti riservati.
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pages = document.querySelectorAll('.page');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const downloadButton = document.getElementById('download-button');
+
+            function showPage(pageId) {
+                pages.forEach(page => {
+                    page.classList.add('hidden');
+                });
+                document.getElementById(pageId).classList.remove('hidden');
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active-link');
+                });
+                document.querySelector(`a[href="#${pageId}"]`).classList.add('active-link');
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const pageId = link.getAttribute('href').substring(1);
+                    showPage(pageId);
+                });
+            });
+
+            downloadButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                // Assicurati che questo URL sia il link al tuo file di download
+                const downloadUrl = 'https://example.com/download/earthfox-latest.zip';
+                window.location.href = downloadUrl;
+            });
+
+            // Mostra la pagina principale di default
+            showPage('home');
+        });
+    </script>
+</body>
+</html>
